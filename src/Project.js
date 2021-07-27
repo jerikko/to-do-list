@@ -16,7 +16,7 @@ export default class Project  {
         Title: ${this.title}, 
         Description: ${this.description}, 
         Due date: ${this.dueDate},
-        To-Do Items: ${JSON.stringify(this.items[0])}`
+        To-Do Items: ${JSON.stringify(this.items)}`
     }
 
 }
