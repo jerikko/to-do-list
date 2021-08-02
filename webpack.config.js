@@ -8,11 +8,21 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'To-Do List',
+      template: './src/index.html',
+      fileName: './dist/index.html',
     }),
   ],
   output: {
-    filename: 'main.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],  
+      },
+    ],
   },
 };

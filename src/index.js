@@ -1,39 +1,18 @@
 import ToDoItem from './ToDoItem.js'
 import Project from './Project.js'
-
-console.log('test')
-
-const body = document.querySelector('body')
+import EventListeners from './EventListeners.js'
+import './style.css'
 
 
-// test button
-function createBtn() {
-    const container = document.createElement('div')
-    container.classList.add('container')
-    const btn = document.createElement('button')
-    btn.textContent = 'Click'
-    btn.addEventListener('click', function() {
-        const toDoItem1 = new ToDoItem('Project.js', 
-                                        'Build out Project class', 
-                                        'July 26, 2021')
-        console.log(toDoItem1.info)
+const inputs = document.querySelectorAll('input')
 
-        const toDoItem2 = new ToDoItem('DOMStuff.js',
-                                        'Build out DOMStuff module',
-                                        'July 27, 2021')
-
-        const project = new Project('To-Do List app',
-                                    'Build out To-Do List app',
-                                    'July 28, 2021')
-        console.log(project)
-        project.addToDoItem(toDoItem1)
-        project.addToDoItem(toDoItem2)
-        console.log(project.info)
-        console.log(project.items.toString())
+// Clears input box values on window refresh
+function init() {
+    Array.from(inputs).forEach(input => {
+        if (!input.classList.contains('button')) input.value = ''
     })
-    
-    body.appendChild(container)
-    container.appendChild(btn)
 }
 
-createBtn()
+
+EventListeners()
+init()

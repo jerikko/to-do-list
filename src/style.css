@@ -1,0 +1,19 @@
+.display-div, .form-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+div.add-project, div.add-task {
+    border: solid black 1px;
+    padding: 1em;
+}
+
+input {
+    margin-bottom: 1em;
+}
+
+li {
+    list-style-type: none;
+    margin: .24em;
+}
